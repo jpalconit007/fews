@@ -1,0 +1,584 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}*/
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header .h1{
+    color: #243c74;
+    font-size: 28px;
+} */
+
+.row {
+    margin-top: -3%;
+    margin-left: 20%;
+
+} 
+
+
+.graph{
+    height: 400px;
+    width: 900px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+.toggle {
+    /* margin-top: 5px;
+    padding: 5px 5px; */
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* admin header */
+
+.main-content {
+    padding: 20px;
+    margin-left: 180px;
+}
+
+.main-content .controls{
+    text-align: center;
+    align-items: center;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.admin-header h1 {
+    color: #243c74;
+    font-size: 28px;
+}
+
+/* header ng lahat */
+
+.header {
+    margin-left: 120px;
+    background-color:rgb(238, 236, 236);
+    color: 007bff;
+    padding: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display:fixed;
+    position:relative;
+    border-bottom: 8px solid #243c74;
+    gap: 5px; 
+}
+
+/* Admin navbar */
+.admin-sidebar {
+    background: linear-gradient(135deg, #243c74, #1a68d1);
+    position: fixed;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    width: 170px; /* Changed from 70px to full width */
+    overflow-y: auto;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    z-index: 100; /* Ensure it stays above other content */
+}
+
+.logo {
+    text-align: center;
+    padding: 15px;
+    font-size: 30px;
+}
+
+.logo img {
+    width: 110px;
+        height: 110px;
+        border-radius: 50%;
+}
+
+.admin-nav-link {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.admin-nav-link li {
+    margin-bottom: 10px;
+}
+
+.admin-nav-link a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 7px 3px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.admin-nav-link a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-nav-link i {
+    font-size: 1.2em;
+    width: 25px;
+    text-align: left;
+    min-width: 25px;
+}
+
+.admin-nav-item {
+    font-size: 1em;
+    display: inline-block;
+    width: calc(100% - 25px);
+    vertical-align: middle;
+}
+
+.container{
+    padding: 0;
+    margin: 0;
+    max-width: 120px;
+}
+
+.sidebar-footer .small{
+  padding: 0.75rem;
+  flex-shrink: 0;
+  color: white;
+}
+
+/* water level chart */
+.dashboard-card2{
+    border: 1px solid #ddd;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-left: 9%;
+
+}
+
+/* map widget */
+
+.dashboard-card3 {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-left: 50%;
+        
+    }
+    .map-card {
+        padding: 10px !important;
+        height: 585px !important;
+        width: 333px  !important;
+        
+    }
+    
+    .map-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    /* Hide leaflet controls in mini map */
+    .leaflet-control-container {
+        display: none;
+    }
+
+/* status legend */
+.status-legend {
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    width: 318px;
+    height: 291px;
+    background: #f9f9f9;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers horizontally */
+    justify-content: center; /* Centers vertically */
+    text-align: center; /* Centers text */
+    margin: 0 auto; /* Centers the entire component if needed */
+    padding-top: 1%;
+    margin-top: -13px;
+}
+
+.status-legend p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    width: 100%; /* Ensures full width for proper centering */
+    font-size: 1rem;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center; /* Centers legend items */
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 150px; /* Fixed width for better alignment */
+}
+
+.color-box {
+    width: 20px;
+    height: 15px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    flex-shrink: 0; /* Prevents the box from shrinking */
+}
+
+.status-label {
+    font-size: 0.8rem;
+    color: #555;
+    text-align: left;
+    width: 100%;
+}
+
+/* water level widget */
+.dashboard-card1 {
+   border: 1px solid #ddd;
+    padding: 8px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 365px;
+}
+
+.card-content {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.river-info {
+    text-align: left;
+    flex: 1;
+    padding-left: 10px;
+}
+
+.waterlevel-legend {
+    text-align: right;
+    border-left: 1px solid #eee;
+    padding-left: 15px;
+}
+
+.digits {
+    padding-left: 15px;
+    font-size: 20px;
+}
+.legend-title {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.river {
+    font-size: 0.9rem;
+    margin: 0 0 8px 0;
+    align-items: center;
+}
+
+.water-level{
+    font-size: 0.8rem;
+    margin: 0 0 5px 0;
+    padding-left: 14px;
+}
+
+.status-text {
+    font-size: 0.8rem;
+    margin: 0 0 5px 0;
+    padding-left: 31px;
+}
+.color-box {
+    width: 20px;
+    height: 15px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.status-label {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.status {
+    font-weight: bold;
+    padding-left: 18px;
+    font-size:20px;
+
+
+}
+
+/* admin history */
+
+.manage{
+    width: 120px; /* Adjust as needed */
+    padding: 10px;
+    background-color: #243c74;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+ .contain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: white;
+    gap: 35px;
+    margin-right: 40px;
+    border: black;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-responsive {
+            max-width: 100%;
+            overflow-x: auto;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            height: max-content;
+        }
+
+        .mb-3 h4{
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+            background-color: white;
+        }
+
+        .table th {
+            padding: 12px;
+            text-align: left;
+            background-color: #2c3e50;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+
+        .table td {
+            padding: 12px;
+            vertical-align: middle;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .table-responsive {
+                margin-left: 70px;
+                margin-right: 20px;
+            }
+        }
+
+        .row {
+            flex-wrap: nowrap;
+            margin-left: 450px;
+            margin-right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .col-auto {
+                width: 100%;
+            }
+        }
+    .chart-container {
+            width: 40%;
+            min-width: 300px;
+            margin: 10px;
+        }
+
+        #dataTableBody tr:hover {
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+
+        .modal-lg {
+            max-width: 800px;
+        }
+
+        .table-responsive {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+
+.row {
+    flex-wrap: nowrap;
+    margin-left: 450px;
+    margin-right: 0;
+}
+
+/* weather widget */
+.weather-card-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .weather-text-section {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .weather-icon-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 5px;
+        border-left: 1px solid #eee;
+    }
+    
+    .weather-metrics-container {
+        margin: 15px 0;
+        
+    }
+    
+    .metric-row {
+        display: flex;
+        gap: 11px;
+        flex-wrap: wrap;
+        padding-left: 5px;
+    }
+    
+    .weather-metric {
+        display: flex;
+        align-items: left;
+        gap: 8px;
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+    
+    .dashboard-card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-left: 9%;
+    }
+
+    .weather-info {
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    img {
+    width: 60px;
+    height: 60px;
+    filter: 
+        drop-shadow(0px 54px 55px rgba(0, 0, 0, 0.25))
+        drop-shadow(0px -12px 30px rgba(0, 0, 0, 0.12))
+        drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.12))
+        drop-shadow(0px 12px 13px rgba(0, 0, 0, 0.17))
+        drop-shadow(0px -3px 5px rgba(0, 0, 0, 0.09));
+}
+
+    @media (max-width: 768px) {
+        .weather-card-content {
+            flex-direction: column;
+        }
+        
+        .weather-icon-section {
+            padding-left: 0;
+            border-left: none;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            width: 100%;
+        }
+        
+        .metric-row {
+            gap: 15px;
+            justify-content: space-between;
+        }
+    }
+
+/* Residents */
+
+
+/* Login */
+
+/* records */
+
+/* notif */
+
+

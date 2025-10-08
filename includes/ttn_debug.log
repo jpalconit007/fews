@@ -1,0 +1,15 @@
+2025-05-19 19:25:19 - RAW INPUT:
+
+
+2025-05-19 19:25:55 - RAW INPUT:
+{
+    "uplink_message": {
+      "decoded_payload": {
+        "water_level": 42.5
+      }
+    }
+  }
+
+2025-05-19 19:26:55 - RAW INPUT:
+
+
